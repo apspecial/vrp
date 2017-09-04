@@ -1,0 +1,55 @@
+---
+title: "CRP_v0"
+author: "Shawn Zhao"
+date: "2017/8/14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Import the required libraries:
+
+```{r}
+# import the required libraries
+library(evaluate)
+library(ggmap)
+library(ggplot2)
+library(mapproj)
+library(rJava)
+```
+
+
+## test
+
+```{r}
+search()
+.jinit(".")
+```
+
+```{r}
+#.jaddClassPath("/Users/xiongwei/eclipse-workspace/testapi/src/")
+#obj=.jnew("testapi/test.class")
+# obj=.jnew("testapi/test")
+# 
+# 
+# testjava<-function()
+# {
+#     result=.jcall(obj,"V","testapi/test",as.list(""))
+#     result
+# }
+# 
+# testjava()
+
+obj=.jnew("testapi/my_convolve")
+x = runif(1000)
+y = runif(1000)
+z=.jcall("testapi/my_convolve", "[D", "convolve", x,y)
+
+```
+
+
+
+
